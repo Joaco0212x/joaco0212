@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Joaco0212x en Roblox</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #fffffe;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(to right, #f25f5c, #e76f51, #f2c14e);
+            animation: gradientAnimation 10s infinite alternate;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        h1 {
+            color: #2d4059; /* Cambiado a un tono más oscuro para resaltar más */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #2d4059; /* Borde para resaltar */
+            background: linear-gradient(to right, #f25f5c, #e76f51, #f2c14e);
+            color: #fffffe;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 10px;
+            border: 2px solid #2d4059; /* Borde para resaltar */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            background: linear-gradient(to right, #f25f5c, #e76f51, #f2c14e);
+            color: #fffffe;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #e76f51, #f25f5c, #f2c14e);
+        }
+
+        #toggleMute {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+
+        #toggleAudio {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+
+        .requirements-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: #2d4059; /* Color oscuro para el fondo */
+            border-radius: 15px;
+        }
+
+        .requirements-title {
+            font-size: 24px;
+            color: #fffffe;
+        }
+
+        .requirements {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #fffffe;
+            text-align: left;
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .requirement-checkbox {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .requirement-text {
+            cursor: pointer;
+        }
+
+        .completed {
+            color: #3d9970; /* Verde para indicar completado */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Elemento de audio para reproducir música automáticamente -->
+    <audio id="audio" loop>
+        <!-- Incluye aquí la ruta de tu archivo de audio -->
+        <source src="musica.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Botón para mutear/desmutear -->
+    <button id="toggleMute">Mutar</button>
+
+    <!-- Botón para iniciar la reproducción manualmente -->
+    <button id="toggleAudio">Activar Música</button>
+
+    <h1>Bienvenido a la Página de Joaco0212x en Roblox</h1>
+
+    <ul>
+        <li><a href="https://roblox.mk/games/920587237/Adopt-Me?privateServerLinkCode=28497014859387385153957845206141">Trade Server Adopt Me</a></li>
+        <li><a href="https://roblox.mk/games/142823291/Murder-Mystery-2?privateServerLinkCode=28497014859387385153957845206141">Trade Server Murder Mystery 2</a></li>
+        <li><a href="https://roblox.mk/games/8737899170/Pet-Simulator-99?privateServerLinkCode=28497014859387385153957845206141" target="_blank">Trade Server Pet Simulator 99</a></li>
+        <li><a href="https://roblox.mk/games/920587237/Adopt-Me?privateServerLinkCode=28497014859387385153957845206141">Servidor donde regalo mascotas</a></li>
+    </ul>
+
+    <div class="requirements-container">
+        <div class="requirements-title">Requisitos para obtener mascotas gratis</div>
+        <div class="requirements">
+            <div class="requirement-item" onclick="toggleRequirement(1)">
+                <div class="requirement-checkbox" id="checkbox1">☐</div>
+                <div class="requirement-text"><a href="https://www.tiktok.com/@joaco0212x?lang=es" target="_blank">Seguirme en TikTok</a></div>
+            </div>
+            <div class="requirement-item" onclick="toggleRequirement(2)">
+                <div class="requirement-checkbox" id="checkbox2">☐</div>
+                <div class="requirement-text"><a href="https://www.tiktok.com/@joaco0212x?lang=es" target="_blank">Darle like al directo</a></div>
+            </div>
+            <div class="requirement-item" onclick="toggleRequirement(3)">
+                <div class="requirement-checkbox" id="checkbox3">☐</div>
+                <div class="requirement-text"><a href="https://www.tiktok.com/@joaco0212x?lang=es" target="_blank">Compartir el directo</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const muteButton = document.getElementById('toggleMute');
+        const audio = document.getElementById('audio');
+        const toggleAudioButton = document.getElementById('toggleAudio');
+
+        muteButton.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+            muteButton.textContent = audio.muted ? 'Activar' : 'Mutar';
+        });
+
+        toggleAudioButton.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+            toggleAudioButton.textContent = audio.muted ? 'Activar Música' : 'Desactivar Música';
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            audio.play();
+        });
+
+        function toggleRequirement(index) {
+            const checkbox = document.getElementById(`checkbox${index}`);
+            checkbox.textContent = checkbox.textContent === '☐' ? '☑' : '☐';
+            checkbox.classList.toggle('completed');
+        }
+    </script>
+
+</body>
+</html>
